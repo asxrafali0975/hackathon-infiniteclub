@@ -6,21 +6,24 @@ import ProfileCard from "./ProfileCard";
 function PhotoPage() {
   return (
     <>
-      {/* Button */}
- {/* <OrangeBtn/> */}
-
 
 
       {/* Cards */}
       <div
         id="scrollpage"
-        className="w-full flex flex-col items-center gap-6 px-4 mt-[4%]"
+        className="w-full flex flex-col items-center gap-6 px-4  bg-[#041130] border-t-2 border-t-slate-200  "
       >
+
+        {/* <OrangeBtn data="Patrons"/> */}
+
+      <h2 className="text-3xl sm:text-3xl font-bold mb-3 italic p-2 rounded-full text-white mt-7 bg-gradient-to-r  from-orange-400 to-orange-600 ">OUR DIGNITARIES</h2>
+      
+
         {/* Row 1 (1 person) */}
-        <div className="flex justify-center w-[15]">
+        <div className="flex justify-center w-[15] mt-[4%]">
           <ProfileCard
-            profile="vite.svg"
-            name="Dr. Ashish Malik"
+            profile="directorsir.jpeg"
+            name="Dr. ASHISH MALIK"
             position="Director"
           />
         </div>
@@ -30,34 +33,32 @@ function PhotoPage() {
         {/* Row 2 (1 person) */}
         <div className="flex justify-center w-[15]">
           <ProfileCard
-            profile="vite.svg"
-            name="Dr. Ashish Malik"
-            position="Director"
+            profile="hodsir.jpeg"
+            name="Dr. SANTOSH KUMAR"
+            position="HOD"
           />
         </div>
 
         <div className="bg-slate-700 w-[40%] h-[2px]"> </div>
 
+        <OrangeBtn data="Faculty Coordinator"/>
+
         {/* Row 3 (3 people) */}
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 w-full max-w-4xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
           <ProfileCard
-            profile="vite.svg"
-            name="Coordinator"
-            position="Member"
+            profile="pooja.jpeg"
+            name="MRS.POOJA DWIVEDI"
+            position="Coordinator"
           />
           <ProfileCard
-            profile="vite.svg"
-            name="Person 4"
-            position="Member"
+            profile="AkashSir.jpeg"
+            name="MR.AKASH DUBEY"
+            position="Coordinator"
           />
-          <ProfileCard
-            profile="vite.svg"
-            name="Person 5"
-            position="Member"
-          />
+          
         </div>
 
-         <OrangeBtn/>
+         <OrangeBtn  data= "Organizing Committee"/>
          <div className="bg-slate-700 w-[40%] h-[2px]"> </div>
 
         {/* Row 4 (3 people) */}
@@ -65,17 +66,17 @@ function PhotoPage() {
           <ProfileCard
             profile="AshrafAli2.jpeg"
             name="Ashraf Ali"
-            position="TechLead"
+            position="Tech-Head"
           />
           <ProfileCard
             profile="Kanika.jpeg"
             name="Kanika Tripathi"
-            position="Member"
+            position="Coordinator"
           />
           <ProfileCard
             profile="Manas2.jpeg"
             name="Manas Sahu"
-            position="Member"
+            position="Coordinator"
           />
         </div>
       </div>

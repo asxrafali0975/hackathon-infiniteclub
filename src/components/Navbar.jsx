@@ -1,78 +1,78 @@
 // src/components/Navbar.jsx
 import { useState } from "react";
-import { Link } from "react-router";
-
+import { Link } from "react-router-dom"; // ✅ Correct routing import
 import ElectricBorder from "../ReactBit/ElectricBorder";
+import RotateText from "./RotateText";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm px-4 sm:px-6 py-4 h-[15vh] flex">
-      <div className="max-w-7xl mx-auto flex justify-between items-center w-[90%]">
-        <h1 className="text-xl font-bold text-blue-900">ASHRAF HACKATHONS</h1>
+    <nav className="bg-white shadow-sm px-4 sm:px-6 py-4 w-full">
+      <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
+        {/* Left: RotateText */}
+        {/* <div className="flex items-center bg-red-800 w-"> */}
+          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  flex  font-bold">
+            <RotateText />
+          </div>
+        {/* </div> */}
 
-        {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6">
-
-          <Link to="/">Home</Link>
-
-
-
+        {/* Right: Desktop Nav */}
+        <div className="hidden md:flex items-center gap-6 text-gray-700 font-medium">
+          <Link to="/" className="hover:text-blue-600 transition">
+            Home
+          </Link>
 
           <ElectricBorder
             color="#1A2A4F"
             speed={1}
             chaos={0.5}
             thickness={3}
-            style={{ borderRadius: 2, display: "inline-block" }} // match button radius
+            style={{ borderRadius: 2, display: "inline-block" }}
           >
             <a
-              href="https://forms.gle/x3H5Q7YdMvbHdXvf6"
+              href="https://forms.gle/F5dYXtgopLdDjoXn7"
               target="_blank"
-              className="px-3 py-2 text-gray-700 font-semibold rounded-md inline-block"
+              rel="noopener noreferrer"
+              className="px-3 py-2 rounded-md inline-block"
             >
-              Register now
+              Register Now
             </a>
           </ElectricBorder>
 
-
-
-          <a href="#" className="text-gray-700">
+          <a href="Hack8_guidelines.pdf" target="_blank" className="hover:text-blue-600 transition">
             Guidelines
           </a>
-
-
-
-          <a href="/about" className="text-gray-700">
-            About
-          </a>
+       
         </div>
 
-        {/* Mobile Menu Button */}
+        {/* Mobile: Hamburger */}
         <button
-          className="md:hidden text-gray-700 focus:outline-none"
+          className="md:hidden text-2xl text-gray-700 focus:outline-none"
           onClick={() => setIsOpen(!isOpen)}
         >
           ☰
         </button>
       </div>
 
-      {/* Mobile Dropdown Menu */}
+      {/* Mobile Dropdown */}
       {isOpen && (
-        <div className="md:hidden flex flex-col mt-3 space-y-2 px-4 mb-3">
+        <div className="md:hidden flex flex-col gap-3 mt-4 px-4">
+          <Link to="/" className="text-gray-700 hover:text-blue-600">
+            Home
+          </Link>
           <a
-            href="https://forms.gle/x3H5Q7YdMvbHdXvf6"
-            className="text-gray-700"
+            href="https://forms.gle/F5dYXtgopLdDjoXn7"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-700 hover:text-blue-600"
           >
             Register
           </a>
-          <a href="#" className="text-gray-700">
+           <a href="Hack8_guidelines.pdf" target="_blank" className="hover:text-blue-600 transition">
             Guidelines
           </a>
-          <a href="/about" className="text-gray-700">
-            About
-          </a>
+     
         </div>
       )}
     </nav>

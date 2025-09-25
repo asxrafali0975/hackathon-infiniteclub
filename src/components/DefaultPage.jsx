@@ -6,15 +6,19 @@ import FeaturedHackathons from './FeaturedHackathons';
 import Footer from './Footer';
 import ProfileCard from './ProfileCard';
 import PhotoPage from './PhotoPage';
+import EventSchedule from './EventSchedule';
+import IntroSection from './IntroSection';
 
 function DefaultPage() {
   return (
     <div className="font-sans">
       <Navbar />
       <Hero />
-      {/* <SearchBar /> */}
+      <IntroSection/>
+      <EventSchedule/>
       <PhotoPage/>
-      {/* <FeaturedHackathons /> */}
+
+    
       <Footer/>
   
     </div>
