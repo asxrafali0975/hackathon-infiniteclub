@@ -2,7 +2,7 @@ import React from 'react';
 
 const IntroSection = () => {
   return (
-    <section className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white py-16 px-4 sm:px-8 lg:px-16">
+    <section className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white py-16 px-4 sm:px-8 lg:px-16 border-t-2 border-t-slate-200 ">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
           What is <span className="text-gradient bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">HACK-Ꝏ-THON</span>?

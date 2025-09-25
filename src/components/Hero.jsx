@@ -25,7 +25,7 @@ export default function Hero() {
   }, [images.length]);
 
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden">
+    <section className="relative h-[90vh] w-full overflow-hidden border-t-2 border-t-slate-200 ">
       {/* Slides */}
       <div
         className="flex h-full transition-transform duration-700 ease-in-out"

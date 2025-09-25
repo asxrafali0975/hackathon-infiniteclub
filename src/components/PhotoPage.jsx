@@ -16,11 +16,12 @@ function PhotoPage() {
 
         {/* <OrangeBtn data="Patrons"/> */}
 
-      <h2 className="text-3xl sm:text-3xl font-bold mb-3 italic p-2 rounded-full text-white mt-7 bg-gradient-to-r  from-orange-400 to-orange-600 ">OUR DIGNITARIES</h2>
+
+      <h2 className="px-6 py-3 bg-gradient-to-r  from-orange-400 to-orange-600 text-white font-semibold rounded-full shadow-lg hover:from-orange-500 hover:to-orange-700 transition-all duration-300 w-[60%] sm:w-auto mt-13 text-center">OUR DIGNITARIES</h2>
       
 
         {/* Row 1 (1 person) */}
-        <div className="flex justify-center w-[15] mt-[4%]">
+        <div className="flex justify-center  w-[15] mt-[4%]">
           <ProfileCard
             profile="directorsir.jpeg"
             name="Dr. ASHISH MALIK"

@@ -19,4 +19,29 @@
       0 0 10px #50c37a,  /* green-400 */
       0 0 20px #237742;  /* deeper emerald */
   }
+
+  
 }
+
+
+@layer utilities {
+  .animate-gradient-blue {
+    background: linear-gradient(270deg, #00f0ff, #0066ff, #00f0ff);
+    background-size: 600% 600%;
+    animation: gradientMove 8s linear infinite;
+  }
+
+  .animate-gradient-pink {
+    background: linear-gradient(270deg, #ff00aa, #ff66cc, #ff00aa);
+    background-size: 600% 600%;
+    animation: gradientMove 8s linear infinite;
+  }
+
+  @keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+}
+
+

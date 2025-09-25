@@ -8,23 +8,22 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-sm px-4 sm:px-6 py-4 w-full">
+    <nav className="bg-[#0F182B] shadow-sm px-4 sm:px-6 py-4 w-full">
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between">
-        {/* Left: RotateText */}
-        {/* <div className="flex items-center bg-red-800 w-"> */}
+     
           <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl  flex  font-bold">
             <RotateText />
           </div>
-        {/* </div> */}
+       
 
         {/* Right: Desktop Nav */}
         <div className="hidden md:flex items-center gap-6 text-gray-700 font-medium">
-          <Link to="/" className="hover:text-blue-600 transition">
+          <Link to="/" className="hover:text-blue-600 transition text-white">
             Home
           </Link>
 
           <ElectricBorder
-            color="#1A2A4F"
+            color="#53EAFD"
             speed={1}
             chaos={0.5}
             thickness={3}
@@ -34,13 +33,13 @@ export default function Navbar() {
               href="https://forms.gle/F5dYXtgopLdDjoXn7"
               target="_blank"
               rel="noopener noreferrer"
-              className="px-3 py-2 rounded-md inline-block"
+              className="px-3 py-2 rounded-md inline-block text-white"
             >
               Register Now
             </a>
           </ElectricBorder>
 
-          <a href="Hack8_guidelines.pdf" target="_blank" className="hover:text-blue-600 transition">
+          <a href="Hack8_guidelines.pdf" target="_blank" className="hover:text-blue-600 transition text-white">
             Guidelines
           </a>
        
