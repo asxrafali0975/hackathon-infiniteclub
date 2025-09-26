@@ -40,38 +40,22 @@ export default function EventSchedule() {
 
         <div className="grid md:grid-cols-2 gap-8">
           {/* Day 1 */}
-          <ElectricBorder
-            color="#00f0ff"
-            speed={1}
-            chaos={0.6}
-            thickness={3}
-            style={{
-              borderRadius: "16px",
-              display: "inline-block",
-              padding: "3px", // ensures glow is visible
-            }}
-          >
-            <div className="bg-gray-900 rounded-2xl p-6 shadow-md relative z-10">
-              <Day1 day1={day1} />
-            </div>
-          </ElectricBorder>
+          
+      <div className="bg-gray-900 rounded-2xl p-6 shadow-md relative z-10 border-glow text-white 
+                transition-transform duration-300 hover:-rotate-2 hover:-rotate-x-2 hover:scale-105">
+  <Day1 day1={day1} />
+</div>
+
+
+          
 
           {/* Day 2 */}
-          <ElectricBorder
-            color="#ff00aa"
-            speed={1}
-            chaos={0.6}
-            thickness={3}
-            style={{
-              borderRadius: "16px",
-              display: "inline-block",
-              padding: "3px", // ensures glow is visible
-            }}
-          >
-            <div className="bg-gray-900 rounded-2xl p-6 shadow-md relative z-10">
+         
+            <div className="bg-gray-900 rounded-2xl p-6 shadow-md relative z-10 text-glow-purple text-white border-glow-pink 
+            transition-transform duration-300 hover:-rotate-2 hover:-rotate-y-3 hover:scale-105">
               <Day2 day2={day2} />
             </div>
-          </ElectricBorder>
+       
         </div>
       </div>
     </section>
