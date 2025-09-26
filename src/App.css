@@ -45,3 +45,38 @@
 }
 
 
+
+@layer utilities {
+  .border-glow {
+    position: relative;
+  }
+  .border-glow::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* sits exactly on the edge */
+    border-radius: 1rem; /* match rounded-2xl */
+    border: 4px solid #53EAFD; /* thin border */
+    box-shadow: 0 0 20px #53EAFD; /* subtle glow */
+    opacity: 0.9;
+    z-index: -1;
+
+  }
+}
+
+@layer utilities {
+  .border-glow-pink {
+    position: relative;
+  }
+  .border-glow-pink::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* sits exactly on the edge */
+    border-radius: 1rem; /* match rounded-2xl */
+    border: 4px solid #C27AFF; /* thin border */
+    box-shadow: 0 0 20px #C27AFF; /* subtle glow */
+    opacity: 0.9;
+    z-index: -1;
+
+  }
+}
+
