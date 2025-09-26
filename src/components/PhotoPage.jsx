@@ -22,7 +22,7 @@ function PhotoPage() {
       
 
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl border-glow-red">
         <ProfileCard
             profile="directorsir.jpeg"
             name="Dr. ASHISH MALIK"

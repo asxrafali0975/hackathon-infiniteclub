@@ -78,5 +78,19 @@
     z-index: -1;
 
   }
+  .border-glow-red{
+    position: relative;
+  }
+  .border-glow-red::before {
+    content: "";
+    position: absolute;
+    inset: 0; /* sits exactly on the edge */
+    border-radius: 1rem; /* match rounded-2xl */
+    border: 4px solid #f80303f2; /* thin border */
+    box-shadow: 0 0 20px #fa0101ed; /* subtle glow */
+    opacity: 0.9;
+    z-index: -1;
+
+  }
 }
 
