@@ -7,11 +7,10 @@ function PhotoPage() {
   return (
     <>
 
-
       {/* Cards */}
       <div
         id="scrollpage"
-        className="w-full flex flex-col items-center gap-6 px-4  bg-[#041130] border-t-2 border-t-slate-200  "
+        className="w-full flex flex-col items-center gap-6 px-4  bg-[#030712] border-t-2 border-t-slate-200  "
       >
 
         {/* <OrangeBtn data="Patrons"/> */}

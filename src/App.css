@@ -3,20 +3,20 @@
 /* globals.css */
 @layer utilities {
   .text-glow {
-    text-shadow: 0 0 5px #9bd0de, 0 0 10px #22cadc, 0 0 20px #3cc1e2;
+    text-shadow: 0 0 5px #9bd0de, 0 0 10px #086b76, 0 0 20px #3cc1e2;
   }
 
    .text-glow-purple {
     text-shadow: 
       0 0 5px #7335b6,   /* light purple */
       0 0 10px #9b4ce6,  /* purple-500 vibe */
-      0 0 20px #3a145b;  /* deep violet */
+      0 0 20px #622299;  /* deep violet */
   }
 
    .text-glow-green {
     text-shadow: 
       0 0 5px #59cc81,   /* light minty green */
-      0 0 10px #50c37a,  /* green-400 */
+      0 0 10px #04491d,  /* green-400 */
       0 0 20px #237742;  /* deeper emerald */
   }
 

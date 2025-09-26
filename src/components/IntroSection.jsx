@@ -2,7 +2,7 @@ import React from 'react';
 
 const IntroSection = () => {
   return (
-    <section className="bg-gradient-to-b from-[#0f172a] to-[#1e293b] text-white py-16 px-4 sm:px-8 lg:px-16 border-t-2 border-t-slate-200 ">
+    <section className="bg-gradient-to-r from-[#030712] to-[#05080b] text-white py-16 px-4 sm:px-8 lg:px-16 border-t-2 border-t-slate-200 ">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-4xl sm:text-5xl font-extrabold mb-4">
           What is <span className="text-gradient bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent">HACK-Ꝏ-THON</span>?
@@ -14,17 +14,17 @@ const IntroSection = () => {
         <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-6 mb-12">
           <div className="bg-[#1f2937] rounded-xl p-6 shadow-lg hover:shadow-xl transition">
             <div className="text-cyan-400 text-2xl mb-2 font-semibold text-glow ">Learn & Grow</div>
-            <p className="text-gray-400">Enhance your skills, explore new technologies, and grow as a developer.</p>
+            <p className=" text-white">Enhance your skills, explore new technologies, and grow as a developer.</p>
           </div>
 
           <div className="bg-[#1f2937] rounded-xl p-6 shadow-lg hover:shadow-xl transition">
             <div className="text-purple-400 text-2xl mb-2 font-semibold text-glow-purple">Network</div>
-            <p className="text-gray-400">Connect, collaborate, and build meaningful relationships with peers and mentors.</p>
+            <p className=" text-white">Connect, collaborate, and build meaningful relationships with peers and mentors.</p>
           </div>
 
           <div className="bg-[#1f2937] rounded-xl p-6 shadow-lg hover:shadow-xl transition">
             <div className="text-green-400 text-2xl mb-2 font-semibold text-glow-green">Win</div>
-            <p className="text-gray-400">Compete for exciting prizes, exclusive swag, and recognition for your solutions.</p>
+            <p className=" text-white">Compete for exciting prizes, exclusive swag, and recognition for your solutions.</p>
           </div>
         </div>
 

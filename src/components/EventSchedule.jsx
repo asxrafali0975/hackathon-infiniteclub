@@ -31,7 +31,7 @@ export default function EventSchedule() {
   ];
 
   return (
-    <section className="py-12 bg-[#1a2a4f] text-white border-t-2 border-t-slate-200">
+    <section className="py-12 bg-[#030712] text-white border-t-2 border-t-slate-200">
       <div className="max-w-5xl mx-auto px-4 text-center">
         <h2 className="text-3xl sm:text-4xl font-bold mb-3">Event Schedule</h2>
         <p className="text-gray-400 mb-10">
