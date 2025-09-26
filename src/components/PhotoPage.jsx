@@ -19,27 +19,24 @@ function PhotoPage() {
       <h2 className="px-6 py-3 bg-gradient-to-r  from-orange-400 to-orange-600 text-white font-semibold rounded-full shadow-lg hover:from-orange-500 hover:to-orange-700 transition-all duration-300 w-[60%] sm:w-auto mt-13 text-center">OUR DIGNITARIES</h2>
       
 
-        {/* Row 1 (1 person) */}
-        <div className="flex justify-center  w-[15] mt-[4%]">
-          <ProfileCard
+      
+
+
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 w-full max-w-4xl">
+        <ProfileCard
             profile="directorsir.jpeg"
             name="Dr. ASHISH MALIK"
             position="Director"
           />
-        </div>
-
-        <div className="bg-slate-700 w-[40%] h-[2px]"> </div>
-
-        {/* Row 2 (1 person) */}
-        <div className="flex justify-center w-[15]">
-          <ProfileCard
+           <ProfileCard
             profile="hodsir.jpeg"
             name="Dr. SANTOSH KUMAR"
             position="HOD"
           />
+          
         </div>
 
-        <div className="bg-slate-700 w-[40%] h-[2px]"> </div>
+
 
         <OrangeBtn data="Faculty Coordinator"/>
 
