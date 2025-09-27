@@ -17,6 +17,10 @@ export default function Hero() {
   const [current, setCurrent] = useState(0);
   const intervalRef = useRef(null);
 
+  // swipe state
+  const touchStartX = useRef(null);
+  const touchEndX = useRef(null);
+
   // Start auto-play
   const startAutoPlay = () => {
     intervalRef.current = setInterval(() => {
@@ -45,7 +49,7 @@ export default function Hero() {
     return () => stopAutoPlay();
   }, []);
 
-  // Handlers for manual navigation
+  // Manual control
   const prevSlide = () => {
     setCurrent((prev) => (prev - 1 + images.length) % images.length);
     restartAutoPlay();
@@ -56,8 +60,39 @@ export default function Hero() {
     restartAutoPlay();
   };
 
+  // Swipe detection
+  const handleTouchStart = (e) => {
+    touchStartX.current = e.touches[0].clientX;
+  };
+
+  const handleTouchEnd = (e) => {
+    touchEndX.current = e.changedTouches[0].clientX;
+    handleSwipe();
+  };
+
+  const handleSwipe = () => {
+    if (!touchStartX.current || !touchEndX.current) return;
+    const distance = touchStartX.current - touchEndX.current;
+
+    if (distance > 50) {
+      // swipe left → next
+      nextSlide();
+    }
+    if (distance < -50) {
+      // swipe right → prev
+      prevSlide();
+    }
+
+    touchStartX.current = null;
+    touchEndX.current = null;
+  };
+
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden border-t-2 border-t-slate-200">
+    <section
+      className="relative h-[90vh] w-full overflow-hidden border-t-2 border-t-slate-200"
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
+    >
       {/* Slides */}
       <div
         className="flex h-full transition-transform duration-700 ease-in-out"
@@ -89,20 +124,6 @@ export default function Hero() {
 
         <CountdownTimer />
       </div>
-
-      {/* Navigation buttons */}
-      <button
-        onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full hover:bg-black/70 text-white text-2xl"
-      >
-        <i className="ri-arrow-left-s-line"></i>
-      </button>
-      <button
-        onClick={nextSlide}
-        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full hover:bg-black/70 text-white text-2xl"
-      >
-        <i className="ri-arrow-right-s-line"></i>
-      </button>
     </section>
   );
 }
