@@ -1,6 +1,5 @@
 // src/components/Hero.jsx
-import { Link } from "react-router-dom"; // ✅ fixed import
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import CountdownTimer from "./CountDown";
 
 export default function Hero() {
@@ -16,16 +15,49 @@ export default function Hero() {
   ];
 
   const [current, setCurrent] = useState(0);
+  const intervalRef = useRef(null);
 
-  useEffect(() => {
-    const id = setInterval(() => {
+  // Start auto-play
+  const startAutoPlay = () => {
+    intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
     }, 5500);
-    return () => clearInterval(id);
-  }, [images.length]);
+  };
+
+  // Stop auto-play
+  const stopAutoPlay = () => {
+    if (intervalRef.current) {
+      clearInterval(intervalRef.current);
+      intervalRef.current = null;
+    }
+  };
+
+  // Restart autoplay after delay
+  const restartAutoPlay = () => {
+    stopAutoPlay();
+    setTimeout(() => {
+      startAutoPlay();
+    }, 3000); // wait 3 seconds after user interaction
+  };
+
+  useEffect(() => {
+    startAutoPlay();
+    return () => stopAutoPlay();
+  }, []);
+
+  // Handlers for manual navigation
+  const prevSlide = () => {
+    setCurrent((prev) => (prev - 1 + images.length) % images.length);
+    restartAutoPlay();
+  };
+
+  const nextSlide = () => {
+    setCurrent((prev) => (prev + 1) % images.length);
+    restartAutoPlay();
+  };
 
   return (
-    <section className="relative h-[90vh] w-full overflow-hidden border-t-2 border-t-slate-200 ">
+    <section className="relative h-[90vh] w-full overflow-hidden border-t-2 border-t-slate-200">
       {/* Slides */}
       <div
         className="flex h-full transition-transform duration-700 ease-in-out"
@@ -56,17 +88,21 @@ export default function Hero() {
         </p>
 
         <CountdownTimer />
-
-        {/* Register button (optional) */}
-        {/* <a
-          href="https://forms.gle/x3H5Q7YdMvbHdXvf6"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="mt-6 px-6 py-3 bg-cyan-400 text-gray-900 font-semibold rounded-md hover:bg-cyan-300 transition"
-        >
-          Register Now
-        </a> */}
       </div>
+
+      {/* Navigation buttons */}
+      <button
+        onClick={prevSlide}
+        className="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full hover:bg-black/70 text-white text-2xl"
+      >
+        <i className="ri-arrow-left-s-line"></i>
+      </button>
+      <button
+        onClick={nextSlide}
+        className="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 p-3 rounded-full hover:bg-black/70 text-white text-2xl"
+      >
+        <i className="ri-arrow-right-s-line"></i>
+      </button>
     </section>
   );
 }
