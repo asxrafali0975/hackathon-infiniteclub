@@ -25,7 +25,7 @@ export default function Hero() {
   const startAutoPlay = () => {
     intervalRef.current = setInterval(() => {
       setCurrent((prev) => (prev + 1) % images.length);
-    }, 5500);
+    }, 6000);
   };
 
   // Stop auto-play
