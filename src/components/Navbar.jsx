@@ -47,7 +47,7 @@ export default function Navbar() {
 
         {/* Mobile: Hamburger */}
         <button
-          className="md:hidden text-2xl text-gray-700 focus:outline-none"
+          className="md:hidden text-2xl focus:outline-none text-white"
           onClick={() => setIsOpen(!isOpen)}
         >
           ☰
